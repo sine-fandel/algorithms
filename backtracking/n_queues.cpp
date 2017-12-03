@@ -6,7 +6,7 @@
 using namespace std;
 
 int c = 0;  //计数
-int m[8][8];   //棋盘
+int m[100][100];   //棋盘
 int t;  //皇后个数
 
 
@@ -19,7 +19,7 @@ bool isValue (int row, int col)
         //if (row == 7 && col == 3) cout << m[i][col] << m[i][col - (row - i)] << m[i][col + (row - i)] << ' ';
         if (m[i][col] == 1)     //该列是否有其他皇后
             return false;
-        if (col - (row - i) > 0 && m[i][col - (row - i)] == 1)
+        if (col - (row - i) >= 0 && m[i][col - (row - i)] == 1)
             return false;
         if (col + (row - i) < t && m[i][col + (row - i)] == 1)
             return false;
